@@ -1,18 +1,15 @@
-# MWeb mweb-medium-like Theme
+# MWeb mweb-mine(矿场)
 
-MWeb new site theme mweb-medium-like.  
 MWeb 新网站主题 mweb-medium-like。  
-[演示网站（Demo Site）](http://coderforart.com/)  
+[演示网站（Demo Site）](https://www.zxing.top/)  
 
 ## 安装 (Install)
 
 ```
 cd ~/Library/Containers/com.coderforart.MWeb/Data/Documents/themes/SiteThemes
-git clone https://github.com/oulvhai/mweb-medium-like.git
+git clone git@github.com:FeMiner/mweb-mine.git
 ```
 
 ## 使用方法（Usage）
-
-<http://coderforart.com/mweb-medium-like-theme.html> （中文）
 
 
