@@ -1,0 +1,38 @@
+<!-- 文章预览列表 -->
+<section id="post-feed">
+  {% for p in posts %}
+  <article class="post-card">
+    <h2 class="post-card-title">
+      <a href="{{ p.url }}">{{ p.title }}</a>
+    </h2>
+    <div class="post-card-info">
+      <span class="date">{{ p.date }}</span>
+      <span class="comments">
+        {% if ext_disqus_shortname.length %}
+        <a href="{{ siteURL }}{{p.url}}#disqus_thread">评论</a> {% /if %}
+      </span>
+    </div>
+    {% if p.ext_featured_image.length %}
+    <div class="post-card-featured-img">
+      <span></span><img src="{{ p.ext_featured_image }}" />
+    </div>
+    {% /if %}
+    <div class="post-card-excerpt">
+      {% if p.ext_excerpt.length %} {{ p.ext_excerpt }} {% else %}
+      {{ p.desContent }} {% /if %}
+    </div>
+    <a class="post-card-readmore" href="{{ p.url }}">Read more</a>
+  </article>
+  {% /for %}
+  <article class="post-card-shim"></article>
+  <article class="post-card-shim"></article>
+  <article class="post-card-shim"></article>
+</section>
+<section id="post-paging">
+  {% if prevPageUrl.length %}
+  <a class="page-prev" href="{{ prevPageUrl }}"><span>上一页</span></a>
+  {% /if %}
+  {% if nextPageUrl.length %}
+  <a class="page-next" href="{{ nextPageUrl }}"><span>下一页</span></a>
+  {% /if %}
+</section>

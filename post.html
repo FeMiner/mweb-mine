@@ -1,0 +1,57 @@
+<section id="post-main">
+  <article id="article-content">
+    <h1 class="post-title">{{post.title}}</h1>
+    <section class="post-content markdown-body">
+      {{ post.content }}
+    </section>
+  </article>
+  <div id="article-related">
+    <div class="article-neighbour">
+      {% if postNav.prev %}
+      <div class="article-prev-next">
+        <p>上一篇</p>
+        <a
+          href="{{ postNav.prev.url }}"
+          title="Previous Post: {{ postNav.prev.title }}"
+          >{{ postNav.prev.title }}</a
+        >
+      </div>
+      {% /if %} {% if postNav.next %}
+      <div class="article-prev-next">
+        <p>下一篇</p>
+        <a
+          href="{{ postNav.next.url }}"
+          title="Next Post: {{ postNav.next.title }}"
+          >{{ postNav.next.title }}</a
+        >
+      </div>
+      {% /if %}
+    </div>
+    <div class="article-recent">
+      <p>近期文章</p>
+      <ul>
+          {% for p in recentPosts %}
+          {% if currentLoop.currentIndex < 10 %}
+            <li class="post">
+              <a href="{{ p.url }}">{{ p.title }}</a>
+            </li>
+          {% /if %}
+          {% /for %} 
+      </ul>
+    </div>
+  </div>
+  <div id="comments-wrap">
+    <div class="share-comments">
+      {{ commentAndShareCode }} {% if ext_disqus_shortname.length %}
+      <div id="disqus_thread"></div>
+      {% /if %} {% if ext_duoshuo_shortname.length %}
+      <div
+        class="ds-thread"
+        data-thread-key="{{post.url}}"
+        data-url="{{ siteURL }}{{post.url}}"
+        data-title="{{post.title}}"
+      ></div>
+      {% /if %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,39 @@
+<section id="article-archives">
+  <h1>文章归档</h1>
+  <div class="article-wrap">
+    {% for p in posts %} 
+    {% if p.year.length %}
+    <div class="article-shim"></div>
+    <div class="article-shim"></div>
+    <div class="article-shim"></div>
+    <div class="article-shim"></div>
+    <div class="article-shim"></div>
+    <div class="article-shim"></div>
+    <div class="article-shim"></div>
+    <div class="article-shim"></div>
+    <h2 class="article-year">{{ p.year }}</h2>
+    {% /if %}
+    <div class="article">
+      <h3><a href="{{ p.url }}">{{ p.title }}</a></h3>
+      <div>
+        <span>{{ p.date }}</span>
+        {% if p.cats.@count %}
+        <span>posted in&nbsp;</span>
+        {% /if %}
+        {% for cat in p.cats %}
+        <span><a href="{{ cat.url }}">{{ cat.name }}</a></span>
+        {% /for %}
+      </div>
+    </div>
+    {% /for %}
+    <div class="article-shim"></div>
+    <div class="article-shim"></div>
+    <div class="article-shim"></div>
+    <div class="article-shim"></div>
+    <div class="article-shim"></div>
+    <div class="article-shim"></div>
+    <div class="article-shim"></div>
+    <div class="article-shim"></div>
+  </div>
+
+</section>
