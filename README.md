@@ -1,6 +1,6 @@
 # MWeb mweb-mine(矿场)
 
-MWeb 新网站主题 mweb-medium-like。  
+MWeb 新网站主题 mweb-mine。  
 [演示网站（Demo Site）](https://www.zxing.top/)  
 
 ## 安装 (Install)

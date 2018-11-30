@@ -316,6 +316,8 @@ nav > ul {
 }
 
 #article-content .post-title{
+  height: 3em;
+  border-bottom: 1px dashed rgb(213, 213, 213);
   text-align: center;
 }
 
@@ -325,6 +327,8 @@ nav > ul {
 
 #article-related>.article-neighbour{
   display: flex;
+  padding-bottom: 0.5em;
+  border-bottom: 1px dotted rgb(213, 213, 213);
 }
 .article-prev-next{
   flex: 1;
@@ -333,6 +337,16 @@ nav > ul {
 .article-prev-next>a{
  color: #4183c4;
 }
+
+.article-recent>ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.article-recent>ul>li {
+  width: 50%;
+  color: #4183c4;
+}
+
 
 
 
