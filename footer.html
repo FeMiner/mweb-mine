@@ -38,6 +38,20 @@
 <script src="asset/instantclick.min.js" data-no-instant></script>
 <script data-no-instant>InstantClick.init();</script>
 
+<script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/asset/sw.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+</script>
+
 
 </body>
 
