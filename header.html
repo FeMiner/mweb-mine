@@ -87,5 +87,12 @@
         </li>
         {% /for %}
       </ul>
+      <ul class="mobile-site-menu">
+        {% for m in siteMenu %}
+        <li id="{{ m.className }}">
+          <a target="{{ m.target }}" href="{{ m.url }}">{{ m.name }}</a>
+        </li>
+        {% /for %}
+      </ul>
     </nav>
     <main id="site-main">
