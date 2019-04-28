@@ -18,30 +18,22 @@
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
-<script type="text/javascript">
-  var disqus_shortname = '{{ ext_disqus_shortname }}';
-  (function () {
-    var s = document.createElement('script'); s.async = true;
-    s.type = 'text/javascript';
-    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-  }());
-</script>
 {% /if %}
 
 {{ seqAndFlowChartSupport }}
 {{ mathJaxSupport }}
 {{ siteOther }}
-<script src="asset/prism.js"></script>
+<script async src="asset/prism.js"></script>
+<script async src="asset/main.js"></script>
 
 <!-- 引入InstantClick -->
-<script src="asset/instantclick.min.js" data-no-instant></script>
+<script  src="asset/instantclick.min.js" data-no-instant></script>
 <script data-no-instant>InstantClick.init();</script>
 
 <script>
   if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/asset/sw.js').then(function(registration) {
+    navigator.serviceWorker.register('/asset/sw.js', '/').then(function(registration) {
       // Registration was successful
       console.log('ServiceWorker registration successful with scope: ', registration.scope);
     }, function(err) {
